@@ -1,11 +1,21 @@
 namespace CleanArchitecture.Domain.Vehiculos
 {
-    public class Vehiculo
+    public sealed class Vehiculo
     {
-        public int Id { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public int Año { get; set; }
-        public string Color { get; set; }
+        public Guid Id { get; private set; }
+        public string? Modelo { get; private set; }
+        public string? Vin { get; private set; }
+        public string? Calle { get; private set; }
+        public string? Departamento { get; private set; }
+        public string? Provincia { get; private set; }
+        public string? Ciudad { get; private set; }
+        public string? Pais { get; private set; }
+        public string? Precio { get; private set; }
+        public string? TipoMoneda { get; private set; }
+        public string? Mantenimiento { get; private set; }
+        public string? MantenimientoTipoMoneda { get; private set; }
+        public string? FechaUltimoAlquiler { get; private set; }
+        public List<Accesorio> Accesorios { get; private set; } = new();
+
     }
 }
