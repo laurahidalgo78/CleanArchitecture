@@ -17,7 +17,7 @@ namespace CleanArchitecture.Domain.Abstractions
 
         public void ClearDomainEvents()
         {
-            _domainEvents.Clear();
+            _domainEvents.Clear(); 
         }
 
         protected void RaiseDomainEvent(IDomainEvent domainEvent)

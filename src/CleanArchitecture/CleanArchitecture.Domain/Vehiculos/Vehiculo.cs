@@ -1,4 +1,5 @@
 using CleanArchitecture.Domain.Abstractions;
+using CleanArchitecture.Domain.Shared;
 
 namespace CleanArchitecture.Domain.Vehiculos
 
@@ -9,8 +10,8 @@ namespace CleanArchitecture.Domain.Vehiculos
             Guid id,
             Modelo modelo,
             Vin vin,
-            Modelo precio,
-            Modelo mantenimiento,
+            Moneda precio,
+            Moneda mantenimiento,
             DateTime fechaUltimoAlquiler,
             List<Accesorio> accesorios,
             Direccion direccion
@@ -20,7 +21,7 @@ namespace CleanArchitecture.Domain.Vehiculos
             Vin = vin;
             Precio = precio;
             Mantenimiento = mantenimiento;
-            FechaUltimoAlquiler = fechaUltimoAlquiler.ToString("yyyy-MM-dd");
+            FechaUltimoAlquiler = fechaUltimoAlquiler;
             Accesorios = accesorios;
             Direccion = direccion;
         }
@@ -33,7 +34,7 @@ namespace CleanArchitecture.Domain.Vehiculos
         public Direccion Direccion {get; private set;}
         public Moneda Precio { get; private set; }
         public Moneda Mantenimiento { get; private set; }
-        public string? FechaUltimoAlquiler { get; private set; }
+        public DateTime? FechaUltimoAlquiler { get; internal set; }
         public List<Accesorio> Accesorios { get; private set; } = new();
 
     }

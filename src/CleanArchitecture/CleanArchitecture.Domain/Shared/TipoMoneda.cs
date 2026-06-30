@@ -1,8 +1,8 @@
-namespace CleanArchitecture.Domain.Vehiculos
+namespace CleanArchitecture.Domain.Shared
 {
    public record TipoMoneda{
 
-    public statgic readonly TipoMoneda None = new("");
+    public static readonly TipoMoneda None = new("");
     public static readonly TipoMoneda Dolar = new("USD");
     public static readonly TipoMoneda Euro = new("EUR");
 
@@ -15,7 +15,7 @@ namespace CleanArchitecture.Domain.Vehiculos
 
     public static TipoMoneda FromCodigo(string codigo)
     {
-        return All.FirstOrDefault(c.Codigo == codigo) ?? 
+        return All.FirstOrDefault(c => c.Codigo == codigo) ?? 
             throw new ApplicationException($"Tipo de moneda con codigo '{codigo}' no encontrado.");
     }
    }
